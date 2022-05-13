@@ -42,7 +42,7 @@ const ForgotPasswordPage: BlitzPage = () => {
   )
 }
 
-ForgotPasswordPage.redirectAuthenticatedTo = "/"
+ForgotPasswordPage.redirectAuthenticatedTo = "/dashboard"
 ForgotPasswordPage.getLayout = (page) => <Layout title="Forgot Your Password?">{page}</Layout>
 
 export default ForgotPasswordPage

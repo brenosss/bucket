@@ -42,10 +42,17 @@ const UserInfo = () => {
 const NavBar = () => {
   return (
     <nav
-      className="relative flex items-center justify-between sm:h-10 md:justify-center px-4"
+      className="relative flex items-center justify-between sm:h-10 md:justify-center px-8 py-10"
       aria-label="Global"
     >
-      <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+      <div className="md:flex items-center justify-start md:flex-1 lg:w-0">
+        <Link href={Routes.Home()}>
+          <a>
+            <strong>Home</strong>
+          </a>
+        </Link>
+      </div>
+      <div className="md:flex items-center justify-end md:flex-1 lg:w-0">
         <Suspense>
           <UserInfo />
         </Suspense>

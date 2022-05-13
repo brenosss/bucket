@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
+import AuthenticatedLayout from "app/core/layouts/AuthenticatedLayout"
 import getBuckets from "app/buckets/queries/getBuckets"
 
 const ITEMS_PER_PAGE = 100
@@ -62,6 +62,6 @@ const BucketsPage: BlitzPage = () => {
 }
 
 BucketsPage.authenticate = true
-BucketsPage.getLayout = (page) => <Layout>{page}</Layout>
+BucketsPage.getLayout = (page) => <AuthenticatedLayout>{page}</AuthenticatedLayout>
 
 export default BucketsPage

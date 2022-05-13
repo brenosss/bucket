@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import { Head, Link, useRouter, useQuery, useMutation, useParam, BlitzPage, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
+import AuthenticatedLayout from "app/core/layouts/AuthenticatedLayout"
 import getBucket from "app/buckets/queries/getBucket"
 import updateBucket from "app/buckets/mutations/updateBucket"
 import { BucketForm, FORM_ERROR } from "app/buckets/components/BucketForm"
@@ -73,6 +73,6 @@ const EditBucketPage: BlitzPage = () => {
 }
 
 EditBucketPage.authenticate = true
-EditBucketPage.getLayout = (page) => <Layout>{page}</Layout>
+EditBucketPage.getLayout = (page) => <AuthenticatedLayout>{page}</AuthenticatedLayout>
 
 export default EditBucketPage

@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
+import AuthenticatedLayout from "app/core/layouts/AuthenticatedLayout"
 import getBucket from "app/buckets/queries/getBucket"
 import deleteBucket from "app/buckets/mutations/deleteBucket"
 
@@ -58,6 +58,6 @@ const ShowBucketPage: BlitzPage = () => {
 }
 
 ShowBucketPage.authenticate = true
-ShowBucketPage.getLayout = (page) => <Layout>{page}</Layout>
+ShowBucketPage.getLayout = (page) => <AuthenticatedLayout>{page}</AuthenticatedLayout>
 
 export default ShowBucketPage
