@@ -1,4 +1,5 @@
 import { useMutation } from "blitz"
+import { BlueButton } from "app/core/components/Buttons"
 import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import signup from "app/auth/mutations/signup"
@@ -35,6 +36,10 @@ export const SignupForm = (props: SignupFormProps) => {
       >
         <LabeledTextField name="email" label="Email" placeholder="Email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
+
+        <div className="flex justify-end">
+          <BlueButton type="submit">SignUp</BlueButton>
+        </div>
       </Form>
     </div>
   )

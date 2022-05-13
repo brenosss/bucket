@@ -254,7 +254,7 @@ const AuthenticatedLayout: BlitzLayout<LayoutInterface> = ({ title, children }) 
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                      Tom Cook
+                      Breno Silva
                     </p>
                     <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">
                       View profile
