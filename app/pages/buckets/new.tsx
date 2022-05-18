@@ -1,71 +1,48 @@
 import { Link, useRouter, useMutation, BlitzPage, Routes } from "blitz"
 import AuthenticatedLayout from "app/core/layouts/AuthenticatedLayout"
+import Container from "app/core/components/Container"
 import createBucket from "app/buckets/mutations/createBucket"
 import { BucketForm, FORM_ERROR } from "app/buckets/components/BucketForm"
-
-export function Container({ children, className }: ComponentProps) {
-  return <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>{children}</div>
-}
-
-type ComponentProps = {
-  children: React.ReactNode
-  className?: string
-}
-
-export function Card({ children, className }: ComponentProps) {
-  return (
-    <div
-      className={`bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 ${className}`}
-    >
-      {children}
-    </div>
-  )
-}
-
-export function CardSection({ children }: ComponentProps) {
-  return <div className="px-4 py-5 sm:px-6">{children}</div>
-}
 
 const NewBucketPage: BlitzPage = () => {
   const router = useRouter()
   const [createBucketMutation] = useMutation(createBucket)
 
   return (
-    <Container className="mx-3">
-      <Card>
-        <CardSection>
-          <h1>
-            <strong>Create New Bucket</strong>
-          </h1>
-        </CardSection>
-
-        <CardSection>
-          <BucketForm
-            onSubmit={async (values) => {
-              try {
-                const bucket = await createBucketMutation(values)
-                router.push(Routes.ShowBucketPage({ bucketId: bucket.id }))
-              } catch (error: any) {
-                console.error(error)
-                return {
-                  [FORM_ERROR]: error.toString(),
-                }
-              }
-            }}
-          />
-        </CardSection>
-      </Card>
-
-      <p>
-        <Link href={Routes.BucketsPage()}>
-          <a>Buckets</a>
-        </Link>
-      </p>
+    <Container>
+      <div className="sm:flex sm:items-center">
+        <div className="sm:flex-auto">
+          <h1 className="text-xl font-semibold text-gray-900">Create New Bucket</h1>
+          <p className="mt-2 text-sm text-gray-700">
+            For work completed from <time dateTime="2022-08-01">August 1, 2022</time> to{" "}
+            <time dateTime="2022-08-31">August 31, 2022</time>.
+          </p>
+        </div>
+        <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+          <p>
+            <Link href={Routes.BucketsPage()}>
+              <a>Buckets</a>
+            </Link>
+          </p>
+        </div>
+      </div>
+      <BucketForm
+        onSubmit={async (values) => {
+          try {
+            const bucket = await createBucketMutation(values)
+            router.push(Routes.ShowBucketPage({ bucketId: bucket.id }))
+          } catch (error: any) {
+            console.error(error)
+            return {
+              [FORM_ERROR]: error.toString(),
+            }
+          }
+        }}
+      />
     </Container>
   )
 }
 
-NewBucketPage.authenticate = true
 NewBucketPage.getLayout = (page) => (
   <AuthenticatedLayout title={"Create New Bucket"}>{page}</AuthenticatedLayout>
 )

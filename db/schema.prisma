@@ -70,10 +70,10 @@ model Bucket {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
   name          String
-  description   String
-  expectedValue Int
-  currentValue  Int
-  color         String
+  description   String?
+  expectedValue Int?
+  currentValue  Int?
+  color         String?
   user          User     @relation(fields: [userId], references: [id])
   userId        Int
 }

@@ -9,7 +9,17 @@ export function BucketForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
     <Form<S> {...props}>
       <LabeledTextField name="name" label="Name" placeholder="Name" />
       <LabeledTextField name="description" label="Description" placeholder="Description" />
-      <BlueButton type="submit">Create bucket</BlueButton>
+      <LabeledTextField
+        name="expectedValue"
+        label="Expected value"
+        placeholder="$00.00"
+        type="number"
+      />
+      <div className="flex">
+        <BlueButton type="submit" className="ml-auto">
+          Create bucket
+        </BlueButton>
+      </div>
     </Form>
   )
 }

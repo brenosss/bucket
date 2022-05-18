@@ -2,7 +2,7 @@ import { Head, BlitzLayout, getSession } from "blitz"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import { BlueButton } from "../components/Buttons"
 import logout from "app/auth/mutations/logout"
-import { Link, useMutation, Routes } from "blitz"
+import { Link, useMutation, Routes, useRouter } from "blitz"
 import { Fragment, useState, Suspense } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import {
@@ -19,6 +19,7 @@ import {
 
 const UserInfo = () => {
   const currentUser = useCurrentUser()
+  const router = useRouter()
   const [logoutMutation] = useMutation(logout)
 
   if (currentUser) {
@@ -76,7 +77,7 @@ const NavBar = () => {
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
+  { name: "Buckets", href: "/buckets", icon: UsersIcon, current: false },
   { name: "Projects", href: "#", icon: FolderIcon, current: false },
   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   { name: "Documents", href: "#", icon: InboxIcon, current: false },
@@ -279,9 +280,6 @@ const AuthenticatedLayout: BlitzLayout<LayoutInterface> = ({ title, children }) 
           <NavBar />
           <main className="flex-1">
             <div className="py-6">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
-              </div>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">{children}</div>
             </div>
           </main>
