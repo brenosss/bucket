@@ -24,16 +24,15 @@ const UserInfo = () => {
 
   if (currentUser) {
     return (
-      <>
-        <BlueButton
-          onClick={async () => {
-            await logoutMutation()
-          }}
-        >
-          <strong>Logout</strong>
-          <LogoutIcon aria-hidden="true" className="ml-4 flex-shrink-0 h-6 w-6" />
-        </BlueButton>
-      </>
+      <div
+        onClick={async () => {
+          await logoutMutation()
+        }}
+        className="flex hover:cursor-pointer"
+      >
+        Logout
+        <LogoutIcon aria-hidden="true" className="ml-4 h-6 w-6" />
+      </div>
     )
   } else {
     return (
@@ -78,7 +77,7 @@ const NavBar = () => {
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
   { name: "Buckets", href: "/buckets", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
+  { name: "Transactions", href: "/transactions", icon: FolderIcon, current: false },
   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   { name: "Documents", href: "#", icon: InboxIcon, current: false },
   { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
