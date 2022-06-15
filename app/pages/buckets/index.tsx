@@ -4,8 +4,6 @@ import AuthenticatedLayout from "app/core/layouts/AuthenticatedLayout"
 import getBuckets from "app/buckets/queries/getBuckets"
 import Container from "app/core/components/Container"
 
-const ITEMS_PER_PAGE = 100
-
 export const BucketsList = () => {
   const router = useRouter()
   const [{ buckets }] = usePaginatedQuery(getBuckets, {
@@ -26,11 +24,6 @@ export const BucketsList = () => {
     </div>
   )
 }
-
-const projects = [
-  { id: 1, name: "New Advertising Campaign", hours: "12.0", rate: "$75.00", price: "$900.00" },
-  // More projects...
-]
 
 function BucketsTable() {
   const [{ buckets }] = usePaginatedQuery(getBuckets, {

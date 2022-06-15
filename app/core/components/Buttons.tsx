@@ -1,4 +1,4 @@
-import { MouseEventHandler, ButtonHTMLAttributes } from "react"
+import { ButtonHTMLAttributes } from "react"
 
 export function Button(props: ButtonHTMLAttributes<HTMLButtonElement>) {
   return (

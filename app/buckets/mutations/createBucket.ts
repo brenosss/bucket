@@ -12,7 +12,6 @@ export default resolver.pipe(
   resolver.zod(CreateBucket),
   resolver.authorize(),
   async (input, ctx) => {
-    console.log(input)
     const bucket = await db.bucket.create({
       data: { ...input, userId: ctx.session.userId, currentValue: 0 },
     })

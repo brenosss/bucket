@@ -4,6 +4,7 @@ import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import { ResetPassword } from "app/auth/validations"
 import resetPassword from "app/auth/mutations/resetPassword"
+import { Button } from "app/core/components/Buttons"
 
 const ResetPasswordPage: BlitzPage = () => {
   const query = useRouterQuery()
@@ -47,6 +48,7 @@ const ResetPasswordPage: BlitzPage = () => {
             label="Confirm New Password"
             type="password"
           />
+          <Button type="submit">Reset</Button>
         </Form>
       )}
     </div>
