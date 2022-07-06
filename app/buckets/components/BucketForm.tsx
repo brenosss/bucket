@@ -1,4 +1,4 @@
-import { Button, BlueButton } from "app/core/components/Buttons"
+import { Button } from "app/core/components/Buttons"
 import { Form, FormProps } from "app/core/components/Form"
 import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { z } from "zod"
@@ -16,9 +16,9 @@ export function BucketForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
         type="number"
       />
       <div className="flex">
-        <BlueButton type="submit" className="ml-auto">
+        <Button type="submit" className="ml-auto" color="blue">
           Create bucket
-        </BlueButton>
+        </Button>
       </div>
     </Form>
   )

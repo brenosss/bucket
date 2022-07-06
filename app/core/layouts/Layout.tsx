@@ -1,9 +1,11 @@
 import { Head, BlitzLayout } from "blitz"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
-import { BlueButton } from "../components/Buttons"
+import { Button, ButtonLink } from "app/core/components/Buttons"
+import { AnchorLink } from "app/core/components/Anchor"
 import logout from "app/auth/mutations/logout"
 import { Link, useMutation, Routes } from "blitz"
 import { Suspense, MouseEventHandler } from "react"
+import { Logo } from "app/core/components/Logo"
 
 const UserInfo = () => {
   const currentUser = useCurrentUser()
@@ -12,28 +14,23 @@ const UserInfo = () => {
   if (currentUser) {
     return (
       <>
-        <BlueButton
+        <Button
+          color="blue"
           onClick={async () => {
             await logoutMutation()
           }}
         >
           <strong>Logout</strong>
-        </BlueButton>
+        </Button>
       </>
     )
   } else {
     return (
       <>
-        <Link href={Routes.LoginPage()}>
-          <a className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-            <strong>Login</strong>
-          </a>
-        </Link>
-        <Link href={Routes.SignupPage()}>
-          <a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-            <strong>Sign Up</strong>
-          </a>
-        </Link>
+        <AnchorLink href={Routes.LoginPage()}>Login</AnchorLink>
+        <ButtonLink className="ml-5" color="blue" href={Routes.SignupPage()}>
+          Sign Up
+        </ButtonLink>
       </>
     )
   }
@@ -45,14 +42,14 @@ const NavBar = () => {
       className="relative flex items-center justify-between sm:h-10 md:justify-center px-8 py-10"
       aria-label="Global"
     >
-      <div className="md:flex items-center justify-start md:flex-1 lg:w-0">
+      <div className="md:flex items-center justify-start md:flex-1 lg:w-0 ml-10">
         <Link href={Routes.Home()}>
           <a>
-            <strong>Home</strong>
+            <Logo />
           </a>
         </Link>
       </div>
-      <div className="md:flex items-center justify-end md:flex-1 lg:w-0">
+      <div className="md:flex items-center justify-end md:flex-1 lg:w-0 mr-10">
         <Suspense>
           <UserInfo />
         </Suspense>

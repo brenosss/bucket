@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Tab } from "@headlessui/react"
 import clsx from "clsx"
 
-import { Container } from "app/landing/Container"
+import Container from "app/core/components/Container"
 import screenshotContacts from "public/images/screenshots/contacts.png"
 import screenshotInventory from "public/images/screenshots/inventory.png"
 import screenshotProfitLoss from "public/images/screenshots/profit-loss.png"

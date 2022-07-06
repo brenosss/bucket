@@ -1,7 +1,8 @@
 import Image from "next/image"
+import { Routes } from "blitz"
 
-import { ButtonLink } from "app/landing/Button"
-import { Container } from "app/landing/Container"
+import { ButtonLink } from "app/core/components/Buttons"
+import Container from "app/core/components/Container"
 import logoLaravel from "public/images/logos/laravel.svg"
 import logoMirage from "public/images/logos/mirage.svg"
 import logoStatamic from "public/images/logos/statamic.svg"
@@ -67,7 +68,7 @@ export function Hero() {
         hope you finally organize your financial life.
       </p>
       <div className="mt-10 flex justify-center space-x-6">
-        <ButtonLink href="/register">Get for free</ButtonLink>
+        <ButtonLink href={Routes.SignupPage()}>Get for free</ButtonLink>
       </div>
     </Container>
   )

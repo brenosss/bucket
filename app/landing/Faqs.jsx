@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { Container } from "app/landing/Container"
+import Container from "app/core/components/Container"
 import backgroundImage from "public/images/background-faqs.jpg"
 
 const faqs = [

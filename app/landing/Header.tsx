@@ -3,8 +3,9 @@ import { Popover, Transition } from "@headlessui/react"
 import clsx from "clsx"
 import { Link, Routes } from "blitz"
 
-import { ButtonLink } from "app/landing/Button"
-import { Container } from "app/landing/Container"
+import { ButtonLink } from "app/core/components/Buttons"
+import { AnchorLink } from "app/core/components/Anchor"
+import Container from "app/core/components/Container"
 import { Logo } from "app/core/components/Logo"
 
 function MobileNavigation() {
@@ -102,39 +103,17 @@ export function Header() {
         <nav className="relative z-50 text-sm">
           <ul className="flex items-center">
             <li>
-              <Link href={Routes.Home()}>
-                <div>
+              <Link href="/">
+                <a>
                   <Logo />
-                </div>
-              </Link>
-            </li>
-            <li className="ml-12 hidden md:block">
-              <Link href="#features">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                  Features
                 </a>
               </Link>
             </li>
             <li className="ml-6 hidden md:block">
-              <Link href="#testimonials">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                  Testimonials
-                </a>
-              </Link>
-            </li>
-            <li className="ml-6 hidden md:block">
-              <Link href="#pricing">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                  Pricing
-                </a>
-              </Link>
+              <AnchorLink href="#features">Features</AnchorLink>
             </li>
             <li className="ml-auto hidden md:block">
-              <Link href={Routes.LoginPage()}>
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                  Sign in
-                </a>
-              </Link>
+              <AnchorLink href={Routes.LoginPage()}>Sign in</AnchorLink>
             </li>
             <li className="ml-auto md:ml-8">
               <ButtonLink href={Routes.SignupPage()} color="blue">

@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { Container } from "app/landing/Container"
+import Container from "app/core/components/Container"
 import { Logo } from "app/core/components/Logo"
 
 export function Footer() {

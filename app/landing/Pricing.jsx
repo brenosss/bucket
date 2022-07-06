@@ -1,7 +1,7 @@
 import clsx from "clsx"
 
-import { ButtonLink } from "app/landing/Button"
-import { Container } from "app/landing/Container"
+import { ButtonLink } from "app/core/components/Buttons"
+import Container from "app/core/components/Container"
 
 function Plan({ name, price, description, href, features, featured = false }) {
   return (

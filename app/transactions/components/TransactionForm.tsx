@@ -1,5 +1,5 @@
 import { Suspense, useState } from "react"
-import { BlueButton } from "app/core/components/Buttons"
+import { Button } from "app/core/components/Buttons"
 import MoneyField from "app/core/components/Forms/MoneyField"
 import ComboboxField from "app/core/components/Forms/ComboboxField"
 import DatePickerField from "app/core/components/Forms/DatePickerField"
@@ -77,9 +77,9 @@ export function TransactionForm({ submitText, onSubmit }) {
       <DatePickerField name="date" label="Date" onChange={setField} error={fieldsErrors.date} />
       <MoneyField label="Value" name="value" onChange={setField} error={fieldsErrors.value} />
       <div className="flex">
-        <BlueButton type="submit" className="ml-auto mt-2">
+        <Button type="submit" className="ml-auto mt-2" color="blue">
           Create transaction
-        </BlueButton>
+        </Button>
       </div>
     </form>
   )

@@ -3,7 +3,7 @@ import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import login from "app/auth/mutations/login"
 import { Login } from "app/auth/validations"
-import { BlueButton } from "app/core/components/Buttons"
+import { Button } from "app/core/components/Buttons"
 
 type LoginFormProps = {
   onSuccess?: (user: PromiseReturnType<typeof login>) => void
@@ -50,7 +50,9 @@ export const LoginForm = (props: LoginFormProps) => {
             <Link href={Routes.SignupPage()}>Sign Up</Link>
           </div>
           <div className="flex justify-end">
-            <BlueButton type="submit">Login</BlueButton>
+            <Button type="submit" color="blue">
+              Login
+            </Button>
           </div>
         </div>
       </Form>

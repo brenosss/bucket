@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { Container } from "app/landing/Container"
+import Container from "app/core/components/Container"
 import avatarImage1 from "public/images/avatars/avatar-1.png"
 import avatarImage2 from "public/images/avatars/avatar-2.png"
 import avatarImage3 from "public/images/avatars/avatar-3.png"

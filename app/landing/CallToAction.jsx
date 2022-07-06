@@ -2,8 +2,8 @@ import Image from "next/image"
 
 import { Routes } from "blitz"
 
-import { ButtonLink } from "app/landing/Button"
-import { Container } from "app/landing/Container"
+import { ButtonLink } from "app/core/components/Buttons"
+import Container from "app/core/components/Container"
 import backgroundImage from "public/images/background-call-to-action.jpg"
 
 export function CallToAction() {
@@ -18,11 +18,11 @@ export function CallToAction() {
             Get started today
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            It’s time to take control of your books. Buy our software so you can feel like you’re
-            doing something productive.
+            It’s time to take control of your money. Start using our software so you can feel like
+            you’re doing something productive.
           </p>
           <ButtonLink href={Routes.SignupPage()} color="white" className="mt-10">
-            Get 6 months free
+            Get for free
           </ButtonLink>
         </div>
       </Container>
