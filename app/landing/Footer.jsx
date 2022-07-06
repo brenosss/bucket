@@ -1,14 +1,16 @@
 import Link from "next/link"
 
 import { Container } from "app/landing/Container"
-import { Logo } from "app/landing/Logo"
+import { Logo } from "app/core/components/Logo"
 
 export function Footer() {
   return (
     <footer className="bg-slate-50">
       <Container>
         <div className="py-16">
-          <Logo className="mx-auto h-10 w-auto" />
+          <div className="justify-center flex">
+            <Logo className="mx-auto h-10 w-auto" />
+          </div>
           <nav className="mt-10 text-sm" aria-label="quick links">
             <ul className="-my-1 flex justify-center space-x-6">
               <li>
@@ -61,7 +63,7 @@ export function Footer() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-slate-500 sm:mt-0">
-            Copyright &copy; {new Date().getFullYear()} TaxPal. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()} Bucket. All rights reserved.
           </p>
         </div>
       </Container>

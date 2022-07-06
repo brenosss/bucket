@@ -1,8 +1,7 @@
-import { Head, BlitzLayout, getSession } from "blitz"
+import { Head, BlitzLayout } from "blitz"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
-import { BlueButton } from "../components/Buttons"
 import logout from "app/auth/mutations/logout"
-import { Link, useMutation, Routes, useRouter } from "blitz"
+import { Link, useMutation, Routes } from "blitz"
 import { Fragment, useState, Suspense } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import {
@@ -16,10 +15,10 @@ import {
   XIcon,
   LogoutIcon,
 } from "@heroicons/react/outline"
+import { Logo } from "app/core/components/Logo"
 
 const UserInfo = () => {
   const currentUser = useCurrentUser()
-  const router = useRouter()
   const [logoutMutation] = useMutation(logout)
 
   if (currentUser) {
@@ -58,13 +57,6 @@ const NavBar = () => {
       className="relative flex items-center justify-between sm:h-10 md:justify-center px-8 py-10"
       aria-label="Global"
     >
-      <div className="md:flex items-center justify-start md:flex-1 lg:w-0">
-        <Link href={Routes.Dashboard()}>
-          <a>
-            <strong>Home</strong>
-          </a>
-        </Link>
-      </div>
       <div className="md:flex items-center justify-end md:flex-1 lg:w-0">
         <Suspense>
           <UserInfo />
@@ -147,9 +139,6 @@ const AuthenticatedLayout: BlitzLayout<LayoutInterface> = ({ title, children }) 
                     </div>
                   </Transition.Child>
                   <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-                    <div className="flex-shrink-0 flex items-center px-4">
-                      <h1>Home</h1>
-                    </div>
                     <nav className="mt-5 px-2 space-y-1">
                       {navigation.map((item) => (
                         <a
@@ -212,11 +201,9 @@ const AuthenticatedLayout: BlitzLayout<LayoutInterface> = ({ title, children }) 
           <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white">
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
               <div className="flex items-center flex-shrink-0 px-4">
-                <p>
-                  <Link href={Routes.Dashboard()}>
-                    <a>Home</a>
-                  </Link>
-                </p>
+                <Link href={Routes.Dashboard()}>
+                  <Logo />
+                </Link>
               </div>
               <nav className="mt-5 flex-1 px-2 bg-white space-y-1">
                 {navigation.map((item) => (

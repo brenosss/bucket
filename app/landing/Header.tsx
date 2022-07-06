@@ -1,12 +1,11 @@
 import { Fragment } from "react"
-import Link from "next/link"
 import { Popover, Transition } from "@headlessui/react"
 import clsx from "clsx"
-import Image from "next/image"
+import { Link, Routes } from "blitz"
 
 import { ButtonLink } from "app/landing/Button"
 import { Container } from "app/landing/Container"
-import logo from "public/images/logo.png"
+import { Logo } from "app/core/components/Logo"
 
 function MobileNavigation() {
   return (
@@ -83,7 +82,7 @@ function MobileNavigation() {
                   </Link>
                 </li>
                 <li className="border-t border-slate-300/40 pt-4">
-                  <Link href="/login">
+                  <Link href={Routes.LoginPage()}>
                     <a className="block w-full">Sign in</a>
                   </Link>
                 </li>
@@ -103,10 +102,10 @@ export function Header() {
         <nav className="relative z-50 text-sm">
           <ul className="flex items-center">
             <li>
-              <Link href="#">
-                <span className="relative whitespace-nowrap font-bold text-2xl">
-                  Buck<span className="text-blue-600">et</span>
-                </span>
+              <Link href={Routes.Home()}>
+                <div>
+                  <Logo />
+                </div>
               </Link>
             </li>
             <li className="ml-12 hidden md:block">
@@ -131,14 +130,14 @@ export function Header() {
               </Link>
             </li>
             <li className="ml-auto hidden md:block">
-              <Link href="/login">
+              <Link href={Routes.LoginPage()}>
                 <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
                   Sign in
                 </a>
               </Link>
             </li>
             <li className="ml-auto md:ml-8">
-              <ButtonLink href="/register" color="blue">
+              <ButtonLink href={Routes.SignupPage()} color="blue">
                 <span>
                   Get started<span className="hidden lg:inline"> today</span>
                 </span>

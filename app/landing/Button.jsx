@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "blitz"
 import clsx from "clsx"
 
 const baseStyles = {
@@ -24,7 +24,7 @@ const variantStyles = {
   },
 }
 
-export function Button({ variant = "solid", color = "slate", className, ...props }) {
+export function Button({ variant = "solid", color = "slate", className = "", ...props }) {
   return (
     <button
       className={clsx(baseStyles[variant], variantStyles[variant][color], className)}
@@ -33,7 +33,7 @@ export function Button({ variant = "solid", color = "slate", className, ...props
   )
 }
 
-export function ButtonLink({ variant = "solid", color = "slate", href, className, ...props }) {
+export function ButtonLink({ variant = "solid", color = "slate", href, className = "", ...props }) {
   return (
     <Link href={href}>
       <a

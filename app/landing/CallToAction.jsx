@@ -1,5 +1,7 @@
 import Image from "next/image"
 
+import { Routes } from "blitz"
+
 import { ButtonLink } from "app/landing/Button"
 import { Container } from "app/landing/Container"
 import backgroundImage from "public/images/background-call-to-action.jpg"
@@ -19,7 +21,7 @@ export function CallToAction() {
             It’s time to take control of your books. Buy our software so you can feel like you’re
             doing something productive.
           </p>
-          <ButtonLink href="/register" color="white" className="mt-10">
+          <ButtonLink href={Routes.SignupPage()} color="white" className="mt-10">
             Get 6 months free
           </ButtonLink>
         </div>
