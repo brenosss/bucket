@@ -59,7 +59,7 @@ const NavBar = () => {
       aria-label="Global"
     >
       <div className="md:flex items-center justify-start md:flex-1 lg:w-0">
-        <Link href={Routes.Home()}>
+        <Link href={Routes.Dashboard()}>
           <a>
             <strong>Home</strong>
           </a>
