@@ -17,7 +17,8 @@ export default resolver.pipe(
       skip,
       take,
       count: () => db.transaction.count({ where }),
-      query: (paginateArgs) => db.transaction.findMany({ ...paginateArgs, where, orderBy }),
+      query: (paginateArgs) =>
+        db.transaction.findMany({ ...paginateArgs, where, orderBy, include: { bucket: true } }),
     })
 
     return {

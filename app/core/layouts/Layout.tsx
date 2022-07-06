@@ -1,10 +1,9 @@
-import { Head, BlitzLayout } from "blitz"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import { Button, ButtonLink } from "app/core/components/Buttons"
 import { AnchorLink } from "app/core/components/Anchor"
 import logout from "app/auth/mutations/logout"
-import { Link, useMutation, Routes } from "blitz"
-import { Suspense, MouseEventHandler } from "react"
+import { Link, useMutation, Routes, Head, BlitzLayout } from "blitz"
+import { Suspense } from "react"
 import { Logo } from "app/core/components/Logo"
 
 const UserInfo = () => {
@@ -38,12 +37,9 @@ const UserInfo = () => {
 
 const NavBar = () => {
   return (
-    <nav
-      className="relative flex items-center justify-between sm:h-10 md:justify-center px-8 py-10"
-      aria-label="Global"
-    >
+    <nav className="relative flex items-center justify-between sm:h-10 md:justify-center px-8 py-10">
       <div className="md:flex items-center justify-start md:flex-1 lg:w-0 ml-10">
-        <Link href={Routes.Home()}>
+        <Link href={Routes.Dashboard()}>
           <a>
             <Logo />
           </a>

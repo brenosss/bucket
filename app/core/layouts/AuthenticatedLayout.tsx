@@ -202,7 +202,9 @@ const AuthenticatedLayout: BlitzLayout<LayoutInterface> = ({ title, children }) 
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
               <div className="flex items-center flex-shrink-0 px-4">
                 <Link href={Routes.Dashboard()}>
-                  <Logo />
+                  <a>
+                    <Logo />
+                  </a>
                 </Link>
               </div>
               <nav className="mt-5 flex-1 px-2 bg-white space-y-1">

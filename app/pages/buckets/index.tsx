@@ -4,27 +4,6 @@ import AuthenticatedLayout from "app/core/layouts/AuthenticatedLayout"
 import getBuckets from "app/buckets/queries/getBuckets"
 import Container from "app/core/components/Container"
 
-export const BucketsList = () => {
-  const router = useRouter()
-  const [{ buckets }] = usePaginatedQuery(getBuckets, {
-    orderBy: { id: "asc" },
-  })
-
-  return (
-    <div>
-      <ul>
-        {buckets.map((bucket) => (
-          <li key={bucket.id}>
-            <Link href={Routes.ShowBucketPage({ bucketId: bucket.id })}>
-              <a>{bucket.name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
 function BucketsTable() {
   const [{ buckets }] = usePaginatedQuery(getBuckets, {
     orderBy: { id: "asc" },
