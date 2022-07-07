@@ -3,30 +3,6 @@ import { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react"
 import { Link, RouteUrlObject } from "blitz"
 import clsx from "clsx"
 
-export function _Button(props: ButtonHTMLAttributes<HTMLButtonElement>) {
-  return (
-    <button
-      {...{
-        ...props,
-        className: `whitespace-nowrap inline-flex items-center justify-center
-          px-4 py-2 border border-transparent rounded-md shadow-sm
-          text-base font-medium ${props.className}`,
-      }}
-    />
-  )
-}
-
-export function _BlueButton(props: ButtonHTMLAttributes<HTMLButtonElement>) {
-  return (
-    <_Button
-      {...{
-        ...props,
-        className: `text-white bg-indigo-600 hover:bg-indigo-700 ${props.className}`,
-      }}
-    />
-  )
-}
-
 const baseStyles = {
   solid:
     "group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2",
