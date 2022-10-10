@@ -1,5 +1,6 @@
 import { paginate, resolver } from "blitz"
 import db, { Prisma } from "db"
+import NuBankAPI from "integrations/nubank/api"
 
 interface GetTransactionsInput
   extends Pick<Prisma.TransactionFindManyArgs, "where" | "orderBy" | "skip" | "take"> {}

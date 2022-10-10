@@ -1,8 +1,9 @@
 import { Suspense } from "react"
-import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes } from "blitz"
+import { Head, usePaginatedQuery, BlitzPage, Routes } from "blitz"
 import AuthenticatedLayout from "app/core/layouts/AuthenticatedLayout"
 import getBuckets from "app/buckets/queries/getBuckets"
 import Container from "app/core/components/Container"
+import { AnchorLink } from "app/core/components/Anchor"
 
 function BucketsTable() {
   const [{ buckets }] = usePaginatedQuery(getBuckets, {
@@ -21,9 +22,7 @@ function BucketsTable() {
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
           <p>
-            <Link href={Routes.NewBucketPage()}>
-              <a>Create Bucket</a>
-            </Link>
+            <AnchorLink href={Routes.NewBucketPage()}>Create Bucket</AnchorLink>
           </p>
         </div>
       </div>

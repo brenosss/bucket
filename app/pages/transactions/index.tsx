@@ -10,14 +10,11 @@ const ITEMS_PER_PAGE = 100
 export const TransactionsList = () => {
   const router = useRouter()
   const page = Number(router.query.page) || 0
-  const [{ transactions, hasMore }] = usePaginatedQuery(getTransactions, {
+  const [{ transactions }] = usePaginatedQuery(getTransactions, {
     orderBy: { id: "asc" },
     skip: ITEMS_PER_PAGE * page,
     take: ITEMS_PER_PAGE,
   })
-
-  const goToPreviousPage = () => router.push({ query: { page: page - 1 } })
-  const goToNextPage = () => router.push({ query: { page: page + 1 } })
 
   return (
     <Container>

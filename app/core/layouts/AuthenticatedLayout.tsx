@@ -5,11 +5,9 @@ import { Link, useMutation, Routes } from "blitz"
 import { Fragment, useState, Suspense } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import {
-  CalendarIcon,
   ChartBarIcon,
   FolderIcon,
   HomeIcon,
-  InboxIcon,
   MenuIcon,
   UsersIcon,
   XIcon,
@@ -70,8 +68,7 @@ const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
   { name: "Buckets", href: "/buckets", icon: UsersIcon, current: false },
   { name: "Transactions", href: "/transactions", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: InboxIcon, current: false },
+  { name: "Banks", href: "/banks", icon: FolderIcon, current: false },
   { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
 ]
 
